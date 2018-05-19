@@ -97,5 +97,5 @@ MonoBehaviour:
   borderWidth: 0.08
   lineThickness: 0.5
   scaleTime: 0.3
-  delay: 0.2
+  delay: 0.1
   easeType: 17

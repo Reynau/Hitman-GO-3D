@@ -17,13 +17,22 @@ public class PlayerMover : MonoBehaviour {
         _board = Object.FindObjectOfType<Board>().GetComponent<Board>();
     }
 
-    void Move (Vector3 destinationPos, float delayTime = 0.25f)
+    void Start()
+    {
+        UpdateBoard();
+        if (_board != null && _board.PlayerNode != null)
+        {
+            _board.PlayerNode.InitNode();
+        }
+    }
+
+    public void Move (Vector3 destinationPos, float delayTime = 0.25f)
     {
         if (_board != null)
         {
             Node targetNode = _board.FindNodeAt(destinationPos);
 
-            if (targetNode != null)
+            if (targetNode != null && _board.PlayerNode.LinkedNodes.Contains(targetNode))
             {
                 StartCoroutine(MoveRoutine(destinationPos, delayTime));
             }
@@ -52,6 +61,8 @@ public class PlayerMover : MonoBehaviour {
         iTween.Stop(gameObject);
         transform.position = destinationPos;
         isMoving = false;
+
+        UpdateBoard();
     }
 
     public void MoveLeft ()
@@ -78,5 +89,17 @@ public class PlayerMover : MonoBehaviour {
         Move(newPosition, 0f);
     }
 
+    void UpdateBoard ()
+    {
+        if (_board != null)
+        {
+            _board.UpdatePlayerNode();
+        }
+    }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0f, 1f, 1f, 0.5f);
+        Gizmos.DrawSphere(_board.PlayerNode.transform.position, 0.3f);
+    }
 }
