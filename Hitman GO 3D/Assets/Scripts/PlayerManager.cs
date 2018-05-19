@@ -23,6 +23,7 @@ public class PlayerManager : MonoBehaviour {
         }
 
         playerInput.GetKeyInput();
+
         if (playerInput.V == 0f)
         {
             if (playerInput.H < 0f)

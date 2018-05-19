@@ -97,23 +97,24 @@ public class GameManager : MonoBehaviour {
         }
         while (!_isGameOver)
         {
+            yield return null;
             // check for Game Over condition
 
             // win
             // reach the end of the level
+            _isGameOver = IsWinner();
 
             // lose
             // player dies
 
             // _isGameOver = true
-            yield return null;
         }
     }
 
     IEnumerator EndLevelRoutine()
     {
-        Debug.Log("END LEVEL");
         _player_manager.playerInput.InputEnabled = false;
+        Debug.Log("END LEVEL");
 
         if (endLevelEvent != null)
         {
@@ -142,5 +143,14 @@ public class GameManager : MonoBehaviour {
     public void PlayLevel ()
     {
         _hasLevelStarted = true;
+    }
+
+    bool IsWinner ()
+    {
+        if (_board.PlayerNode != null && _board.GoalNode != null)
+        {
+            return (_board.PlayerNode == _board.GoalNode);
+        }
+        return false;
     }
 }

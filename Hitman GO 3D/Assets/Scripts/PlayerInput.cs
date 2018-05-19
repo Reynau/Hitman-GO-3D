@@ -18,5 +18,10 @@ public class PlayerInput : MonoBehaviour {
             _h = Input.GetAxisRaw("Horizontal");
             _v = Input.GetAxisRaw("Vertical");
         }
+        else
+        {
+            _h = 0f;
+            _v = 0f;
+        }
     }
 }

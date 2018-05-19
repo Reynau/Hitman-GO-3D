@@ -17,13 +17,9 @@ public class PlayerMover : MonoBehaviour {
         _board = Object.FindObjectOfType<Board>().GetComponent<Board>();
     }
 
-    void Start()
+    void Start ()
     {
         UpdateBoard();
-        if (_board != null && _board.PlayerNode != null)
-        {
-            _board.PlayerNode.InitNode();
-        }
     }
 
     public void Move (Vector3 destinationPos, float delayTime = 0.25f)
@@ -95,11 +91,5 @@ public class PlayerMover : MonoBehaviour {
         {
             _board.UpdatePlayerNode();
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(0f, 1f, 1f, 0.5f);
-        Gizmos.DrawSphere(_board.PlayerNode.transform.position, 0.3f);
     }
 }
