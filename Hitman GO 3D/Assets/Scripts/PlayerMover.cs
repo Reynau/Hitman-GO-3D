@@ -11,10 +11,10 @@ public class PlayerMover : MonoBehaviour {
     public float iTweenDelay = 0f;
 	
 	void Start () {
-        Move(new Vector3(2f, 0f, 0f), 1f);
+        
 	}
 
-    public void Move (Vector3 destinationPos, float delayTime = 0.25f)
+    void Move (Vector3 destinationPos, float delayTime = 0.25f)
     {
         StartCoroutine(MoveRoutine(destinationPos, delayTime));
     }
@@ -22,6 +22,7 @@ public class PlayerMover : MonoBehaviour {
     IEnumerator MoveRoutine (Vector3 destinationPos, float delayTime)
     {
         isMoving = true;
+        destination = destinationPos;
         yield return new WaitForSeconds(delayTime);
         iTween.MoveTo(gameObject, iTween.Hash(
             "x", destinationPos.x,    
@@ -40,5 +41,29 @@ public class PlayerMover : MonoBehaviour {
         iTween.Stop(gameObject);
         transform.position = destinationPos;
         isMoving = false;
+    }
+
+    public void MoveLeft ()
+    {
+        Vector3 newPosition = transform.position + new Vector3(-2f, 0f, 0f);
+        Move(newPosition, 0f);
+    }
+
+    public void MoveRight()
+    {
+        Vector3 newPosition = transform.position + new Vector3(2f, 0f, 0f);
+        Move(newPosition, 0f);
+    }
+
+    public void MoveForward()
+    {
+        Vector3 newPosition = transform.position + new Vector3(0f, 0f, 2f);
+        Move(newPosition, 0f);
+    }
+
+    public void MoveBackward()
+    {
+        Vector3 newPosition = transform.position + new Vector3(0f, 0f, -2f);
+        Move(newPosition, 0f);
     }
 }

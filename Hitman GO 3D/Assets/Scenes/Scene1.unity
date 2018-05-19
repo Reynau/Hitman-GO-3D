@@ -1490,6 +1490,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1720057314}
   - component: {fileID: 1720057315}
+  - component: {fileID: 1720057317}
+  - component: {fileID: 1720057316}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1524,9 +1526,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0, z: 0}
   isMoving: 0
-  easeType: 0
+  easeType: 16
   moveSpeed: 1.5
   iTweenDelay: 0
+--- !u!114 &1720057316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720057313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b41683f385018f7468d47662e3013340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMover: {fileID: 0}
+  playerInput: {fileID: 0}
+--- !u!114 &1720057317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720057313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f6aa8fdf9e76143b7abf156a4bc242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1737325089
 Prefab:
   m_ObjectHideFlags: 0
