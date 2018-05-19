@@ -10,11 +10,6 @@ public class Link : MonoBehaviour {
     public float delay = 0.1f;
     public iTween.EaseType easeType = iTween.EaseType.easeInOutExpo;
 
-    private void Start()
-    {
-        DrawLink(new Vector3(2f, 0f, 0f), new Vector3(2f, 0f, 2f));
-    }
-
     public void DrawLink (Vector3 startPos, Vector3 endPos)
     {
         transform.localScale = new Vector3(lineThickness, 1f, 0f);
