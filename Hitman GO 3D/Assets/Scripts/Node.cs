@@ -19,6 +19,8 @@ public class Node : MonoBehaviour {
 
     public float delay = 1f;
 
+    bool _isInitialized = false;
+
     void Awake()
     {
         _board = Object.FindObjectOfType<Board>();
@@ -32,7 +34,7 @@ public class Node : MonoBehaviour {
 
             if (run)
             {
-                ShowGeometry();
+                InitNode();
             }
 
             if (_board != null)
@@ -70,5 +72,30 @@ public class Node : MonoBehaviour {
         }
 
         return nList;
+    }
+
+    public void InitNode ()
+    {
+        if (!_isInitialized)
+        {
+            ShowGeometry();
+            InitNeighbors();
+            _isInitialized = true;
+        }
+    }
+
+    void InitNeighbors ()
+    {
+        StartCoroutine(InitNeighborsRoutine());
+    }
+
+    IEnumerator InitNeighborsRoutine ()
+    {
+        yield return new WaitForSeconds(delay);
+
+        foreach (Node n in _neighborNodes)
+        {
+            n.InitNode();
+        }
     }
 }
