@@ -9,6 +9,9 @@ public class Node : MonoBehaviour {
     List<Node> _neighborNodes = new List<Node>();
     public List<Node> NeighborNodes { get { return _neighborNodes; } }
 
+    List<Node> _linkedNodes = new List<Node>();
+    public List<Node> LinkedNodes { get { return _linkedNodes; } }
+
     Board _board;
 
     public GameObject geometry;
@@ -97,8 +100,11 @@ public class Node : MonoBehaviour {
 
         foreach (Node n in _neighborNodes)
         {
-            LinkNode(n);
-            n.InitNode();
+            if (!_linkedNodes.Contains(n))
+            {
+                LinkNode(n);
+                n.InitNode();
+            }
         }
     }
 
@@ -113,6 +119,15 @@ public class Node : MonoBehaviour {
             if (link != null)
             {
                 link.DrawLink(transform.position, targetNode.transform.position);
+            }
+            if (!_linkedNodes.Contains(targetNode))
+            {
+                _linkedNodes.Add(targetNode);
+            }
+
+            if (!targetNode.LinkedNodes.Contains(this))
+            {
+                targetNode.LinkedNodes.Add(this);
             }
         }
     }
