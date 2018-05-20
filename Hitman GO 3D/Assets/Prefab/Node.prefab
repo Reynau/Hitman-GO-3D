@@ -127,8 +127,8 @@ MonoBehaviour:
   linkPrefab: {fileID: 1354916896980650, guid: 1de31231da39f004285a3115fc45543e, type: 2}
   scaleTime: 0.3
   easeType: 16
-  run: 0
   delay: 0.1
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
+  isLevelGoal: 0
