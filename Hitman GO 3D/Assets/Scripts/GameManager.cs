@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour {
 
     public float delay = 1f;
 
+    public UnityEvent setupEvent;
     public UnityEvent startLevelEvent;
     public UnityEvent playLevelEvent;
     public UnityEvent endLevelEvent;
@@ -68,6 +69,11 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator StartLevelRoutine()
     {
+        Debug.Log("SETUP LEVEL");
+        if (setupEvent != null)
+        {
+            setupEvent.Invoke();
+        }
         Debug.Log("START LEVEL");
         _player_manager.playerInput.InputEnabled = false;
         while(!_hasLevelStarted)
