@@ -27,7 +27,16 @@ public class Board : MonoBehaviour {
     public float drawGoalDelay = 1f;
     public iTween.EaseType drawGoalEaseType = iTween.EaseType.easeOutExpo;
 
+    public float initBoardDelay = 2f;
+
     PlayerMover _player_mover;
+
+    public List<Transform> capturePositions;
+    int _currentCapturePosition = 0;
+    public int CurrentCapturePosition { get { return _currentCapturePosition; } set { _currentCapturePosition = value; } }
+
+    public float capturePositionGizmoSize = 0.4f;
+    public Color capturePositionGizmoColor = Color.blue;
 
     void Awake()
     {
@@ -63,9 +72,42 @@ public class Board : MonoBehaviour {
         return null;
     }
 
+    public List<EnemyManager> FindEnemiesAt (Node node)
+    {
+        List<EnemyManager> foundEnemies = new List<EnemyManager>();
+        EnemyManager[] enemies = Object.FindObjectsOfType<EnemyManager>() as EnemyManager[];
+
+        foreach (EnemyManager enemy in enemies)
+        {
+            EnemyMover mover = enemy.GetComponent<EnemyMover>();
+
+            if (mover.CurrentNode == node)
+            {
+                foundEnemies.Add(enemy);
+            }
+        }
+
+        return foundEnemies;
+    }
+
     public void UpdatePlayerNode ()
     {
         _playerNode = FindPlayerNode();
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0f, 1f, 1f, 0.5f);
+        if (_playerNode != null)
+        {
+            Gizmos.DrawSphere(_playerNode.transform.position, 0.2f);
+        }
+
+        Gizmos.color = capturePositionGizmoColor;
+        foreach (Transform capturePos in capturePositions)
+        {
+            Gizmos.DrawCube(capturePos.position, Vector3.one * capturePositionGizmoSize);
+        }
     }
 
     public void DrawGoal ()
@@ -86,7 +128,12 @@ public class Board : MonoBehaviour {
     {
         if (_playerNode != null)
         {
-            _playerNode.InitNode();
+            StartCoroutine(InitBoardRoutine());
         }
+    }
+
+    IEnumerator InitBoardRoutine () {
+        yield return new WaitForSeconds(initBoardDelay);
+        _playerNode.InitNode();
     }
 }

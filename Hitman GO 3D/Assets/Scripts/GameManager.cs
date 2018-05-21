@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour {
         set { _hasLevelFinished = value; }
     }
 
-    public float delay = 1f;
+    public float startPlayingDelay = 1f;
 
     public UnityEvent setupEvent;
     public UnityEvent startLevelEvent;
@@ -87,31 +87,35 @@ public class GameManager : MonoBehaviour {
     IEnumerator StartLevelRoutine()
     {
         Debug.Log("SETUP LEVEL");
+
         if (setupEvent != null)
         {
-            setupEvent.Invoke();
+            setupEvent.Invoke();    // Activates start menu
         }
-        Debug.Log("START LEVEL");
+
         _player.playerInput.InputEnabled = false;
-        while(!_hasLevelStarted)
+
+        Debug.Log("START LEVEL");
+
+        while(!_hasLevelStarted)    // Waiting for the player to click the play button
         {
-            // show start screen
-            //   user presses button to start
-            //   _hasLevelStarted = true
             yield return null;
         }
 
         if (startLevelEvent != null)
         {
-            startLevelEvent.Invoke();
+            startLevelEvent.Invoke();   // Hide start menu and init board and player compass
         }
     }
 
     IEnumerator PlayLevelRoutine()
     {
         Debug.Log("PLAY LEVEL");
+
         _isGamePlaying = true;
-        yield return new WaitForSeconds(delay);
+
+        yield return new WaitForSeconds(startPlayingDelay);
+
         _player.playerInput.InputEnabled = true;
 
         if (playLevelEvent != null)
@@ -121,16 +125,8 @@ public class GameManager : MonoBehaviour {
         while (!_isGameOver)
         {
             yield return null;
-            // check for Game Over condition
 
-            // win
-            // reach the end of the level
             _isGameOver = IsWinner();
-
-            // lose
-            // player dies
-
-            // _isGameOver = true
         }
     }
 
@@ -142,6 +138,8 @@ public class GameManager : MonoBehaviour {
     IEnumerator LoseLevelRoutine ()
     {
         _isGameOver = true;
+
+        yield return new WaitForSeconds(1.5f);
 
         if (loseLevelEvent != null)
         {
@@ -210,7 +208,7 @@ public class GameManager : MonoBehaviour {
 
         foreach (EnemyManager enemy in _enemies)
         {
-            if (enemy != null)
+            if (enemy != null && !enemy.IsDead)
             {
                 enemy.IsTurnComplete = false;
                 enemy.PlayTurn();
@@ -222,7 +220,23 @@ public class GameManager : MonoBehaviour {
     {
         foreach (EnemyManager enemy in _enemies)
         {
+            if (enemy.IsDead)
+            {
+                continue;
+            }
             if (!enemy.IsTurnComplete)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool AreEnemiesAllDead ()
+    {
+        foreach (EnemyManager enemy in _enemies)
+        {
+            if (!enemy.IsDead)
             {
                 return false;
             }
@@ -234,7 +248,7 @@ public class GameManager : MonoBehaviour {
     {
         if (_currentTurn == Turn.Player && _player != null)
         {
-            if (_player.IsTurnComplete)
+            if (_player.IsTurnComplete && !AreEnemiesAllDead())
             {
                 PlayEnemyTurn();
             }

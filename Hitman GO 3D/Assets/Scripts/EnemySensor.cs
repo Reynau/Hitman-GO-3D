@@ -17,7 +17,7 @@ public class EnemySensor : MonoBehaviour {
         _board = Object.FindObjectOfType<Board>().GetComponent<Board>();
 	}
 	
-    public void UpdateSensor ()
+    public void UpdateSensor (Node enemyNode)
     {
         Vector3 worldSpacePositionToSearch = transform.position + transform.TransformDirection(directionToSearch);
 
@@ -25,7 +25,11 @@ public class EnemySensor : MonoBehaviour {
         {
             _nodeToSearch = _board.FindNodeAt(worldSpacePositionToSearch);
 
-            if (_nodeToSearch == _board.PlayerNode)
+            if (!enemyNode.LinkedNodes.Contains(_nodeToSearch))
+            {
+                _foundPlayer = false;
+            }
+            else if (_nodeToSearch == _board.PlayerNode)
             {
                 _foundPlayer = true;
             }
