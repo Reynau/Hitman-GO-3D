@@ -32,6 +32,8 @@ public class PlayerMover : Mover {
         {
             _playerCompass.ShowArrows(true);
         }
+
+        finishMovementEvent.Invoke();
     }
 
     void UpdateBoard ()

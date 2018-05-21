@@ -3,10 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System.Linq;
+
+[System.Serializable]
+public enum Turn
+{
+    Player,
+    Enemy
+}
 
 public class GameManager : MonoBehaviour {
     Board _board;
-    PlayerManager _player_manager;
+    PlayerManager _player;
+
+    List<EnemyManager> _enemies;
+
+    Turn _currentTurn = Turn.Player;
+    public Turn CurrentTurn { get { return _currentTurn; } }
 
     bool _hasLevelStarted = false;
     public bool HasLevelStarted
@@ -45,12 +58,15 @@ public class GameManager : MonoBehaviour {
 
     void Awake () {
         _board = Object.FindObjectOfType<Board>().GetComponent<Board>();
-        _player_manager = Object.FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>();
+        _player = Object.FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>();
+
+        EnemyManager[] enemies = Object.FindObjectsOfType<EnemyManager>() as EnemyManager[];
+        _enemies = enemies.ToList();
     }
 
     void Start()
     {
-        if (_player_manager != null && _board != null)
+        if (_player != null && _board != null)
         {
             StartCoroutine("RunGameLoop");
         }
@@ -75,7 +91,7 @@ public class GameManager : MonoBehaviour {
             setupEvent.Invoke();
         }
         Debug.Log("START LEVEL");
-        _player_manager.playerInput.InputEnabled = false;
+        _player.playerInput.InputEnabled = false;
         while(!_hasLevelStarted)
         {
             // show start screen
@@ -95,7 +111,7 @@ public class GameManager : MonoBehaviour {
         Debug.Log("PLAY LEVEL");
         _isGamePlaying = true;
         yield return new WaitForSeconds(delay);
-        _player_manager.playerInput.InputEnabled = true;
+        _player.playerInput.InputEnabled = true;
 
         if (playLevelEvent != null)
         {
@@ -119,7 +135,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator EndLevelRoutine()
     {
-        _player_manager.playerInput.InputEnabled = false;
+        _player.playerInput.InputEnabled = false;
         Debug.Log("END LEVEL");
 
         if (endLevelEvent != null)
@@ -158,5 +174,57 @@ public class GameManager : MonoBehaviour {
             return (_board.PlayerNode == _board.GoalNode);
         }
         return false;
+    }
+
+    void PlayPlayerTurn ()
+    {
+        _currentTurn = Turn.Player;
+        _player.IsTurnComplete = false;
+
+        // alow Player to move
+    }
+
+    void PlayEnemyTurn()
+    {
+        _currentTurn = Turn.Enemy;
+
+        foreach (EnemyManager enemy in _enemies)
+        {
+            if (enemy != null)
+            {
+                enemy.IsTurnComplete = false;
+                enemy.PlayTurn();
+            }
+        }
+    }
+
+    bool IsEnemyTurnComplete ()
+    {
+        foreach (EnemyManager enemy in _enemies)
+        {
+            if (!enemy.IsTurnComplete)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void UpdateTurn ()
+    {
+        if (_currentTurn == Turn.Player && _player != null)
+        {
+            if (_player.IsTurnComplete)
+            {
+                PlayEnemyTurn();
+            }
+        }
+        else if (_currentTurn == Turn.Enemy)
+        {
+            if (IsEnemyTurnComplete())
+            {
+                PlayPlayerTurn();
+            }
+        }
     }
 }

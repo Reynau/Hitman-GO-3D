@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Mover : MonoBehaviour {
     public Vector3 destination;
@@ -14,6 +15,8 @@ public class Mover : MonoBehaviour {
 
     protected Board _board;
     protected Node _currentNode;
+
+    public UnityEvent finishMovementEvent;
 
     protected virtual void Awake()
     {
@@ -113,7 +116,7 @@ public class Mover : MonoBehaviour {
         }
     }
 
-    void FaceDestination ()
+    protected void FaceDestination ()
     {
         Vector3 movementDir = destination - transform.position;
         Quaternion newRotation = Quaternion.LookRotation(movementDir);
