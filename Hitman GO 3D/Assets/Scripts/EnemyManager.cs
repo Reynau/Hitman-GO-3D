@@ -26,17 +26,22 @@ public class EnemyManager : TurnManager {
 
     IEnumerator PlayTurnRoutine ()
     {
-        _enemySensor.UpdateSensor();
-
-        yield return new WaitForSeconds(0.5f);
-
-        if (_enemySensor.FoundPlayer)
+        if (_gameManager != null)
         {
+            _enemySensor.UpdateSensor();
 
-        }
-        else
-        {
-            _enemyMover.MoveOneTurn();
+            yield return new WaitForSeconds(0.5f);
+
+            if (_enemySensor.FoundPlayer)
+            {
+
+
+                _gameManager.LoseLevel();
+            }
+            else
+            {
+                _enemyMover.MoveOneTurn();
+            }
         }
     }
 }
