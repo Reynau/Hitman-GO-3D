@@ -90,6 +90,22 @@ public class Board : MonoBehaviour {
         return foundEnemies;
     }
 
+    public Activable FindActivableAt (Node node)
+    {
+        Activable[] activables = Object.FindObjectsOfType<Activable>() as Activable[];
+
+        foreach (Activable activable in activables)
+        {
+            if (activable == null) continue;
+
+            if (activable.transform.position == node.transform.position)
+            {
+                return activable;
+            }
+        }
+        return null;
+    }
+
     public void UpdatePlayerNode ()
     {
         _playerNode = FindPlayerNode();
@@ -124,11 +140,25 @@ public class Board : MonoBehaviour {
         }
     }
 
+    public void InitActivables ()
+    {
+        Activable[] activables = Object.FindObjectsOfType<Activable>() as Activable[];
+
+        foreach (Activable activable in activables)
+        {
+            if (activable != null)
+            {
+                activable.Init();
+            }
+        }
+    }
+
     public void InitBoard ()
     {
         if (_playerNode != null)
         {
             StartCoroutine(InitBoardRoutine());
+            InitActivables();
         }
     }
 

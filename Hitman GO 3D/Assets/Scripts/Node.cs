@@ -119,7 +119,7 @@ public class Node : MonoBehaviour {
         }
     }
 
-    void LinkNode (Node targetNode)
+    public void LinkNode (Node targetNode)
     {
         if (linkPrefab != null)
         {

@@ -87,8 +87,29 @@ public class PlayerManager : TurnManager
         }
     }
 
+    void ActivateActivables ()
+    {
+        if (_board != null)
+        {
+            Activable activable = _board.FindActivableAt(_board.PlayerNode);
+            if (activable != null)
+            {
+                activable.Activate();
+            }
+            else
+            {
+                Debug.LogWarning("PLAYERMANAGER ActivateActivables Error: activable is null");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("PLAYERMANAGER ActivateActivables Error: _board is null");
+        }
+    }
+
     public override void FinishTurn()
     {
+        ActivateActivables();
         CaptureEnemies();
         base.FinishTurn();
     }
