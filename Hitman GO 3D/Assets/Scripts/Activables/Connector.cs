@@ -10,9 +10,7 @@ public class Connector : Activable {
     public Node activableNode;
     public Node targetNode;
 
-    public float iTweenDelay;
-    public iTween.EaseType easeType;
-    public float animTime;
+    public float delay;
 
     private void Awake()
     {
@@ -38,26 +36,34 @@ public class Connector : Activable {
 
         if (activableNode != null && targetNode != null)
         {
-            if (_active)
+            if (!_active)
             {
-                if (!isStatic)
-                {
-                    _active = false;
-                }
-                activableNode.RemoveLink(targetNode);
+                StartCoroutine(LinkNodeRoutine());
+                _active = true;
             }
-            else
+            else if (!isStatic)
             {
-                if (!isStatic)
-                {
-                    _active = true;
-                }
-                activableNode.LinkNode(targetNode);
+                StartCoroutine(RemoveNodeRoutine());
+                 _active = false;
             }
         }
         else
         {
             Debug.LogWarning("ACTIVABLE Activate Error: activableNode or targetNode is null");
         }
+    }
+
+    IEnumerator LinkNodeRoutine ()
+    {
+        yield return new WaitForSeconds(delay);
+        activableNode.LinkNode(targetNode);
+        activateActivableEvent.Invoke();
+    }
+
+    IEnumerator RemoveNodeRoutine ()
+    {
+        yield return new WaitForSeconds(delay);
+        activableNode.RemoveLink(targetNode);
+        activateActivableEvent.Invoke();
     }
 }
