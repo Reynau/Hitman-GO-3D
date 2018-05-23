@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Link : MonoBehaviour {
 
+    Vector3 _startPos;
+    public Vector3 StartPos { get { return _startPos; } }
+    Vector3 _endPos;
+    public Vector3 EndPos { get { return _endPos; } }
+
     public float borderWidth = 0.08f;
     public float lineThickness = 0.5f;
     public float scaleTime = 0.25f;
@@ -12,6 +17,9 @@ public class Link : MonoBehaviour {
 
     public void DrawLink (Vector3 startPos, Vector3 endPos)
     {
+        _startPos = startPos;
+        _endPos = endPos;
+
         transform.localScale = new Vector3(lineThickness, 1f, 0f);
         Vector3 dirVector = endPos - startPos;
         float zScale = dirVector.magnitude - borderWidth * 2f;
@@ -23,6 +31,16 @@ public class Link : MonoBehaviour {
                 "scale", newScale,
                 "easetype", easeType,
                 "delay", delay
+        ));
+    }
+
+    public void RemoveLink ()
+    {
+        iTween.ScaleTo(gameObject, iTween.Hash(
+            "time", scaleTime,
+            "scale", Vector3.zero,
+            "easeType", easeType,
+            "delay", delay
         ));
     }
 }

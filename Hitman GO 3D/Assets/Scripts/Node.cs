@@ -143,6 +143,36 @@ public class Node : MonoBehaviour {
         }
     }
 
+    public Link FindLinkAt (Node targetNode)
+    {
+        Link[] originLinks = GetComponentsInChildren<Link>();
+
+        foreach (Link link in originLinks)
+        {
+            if (link.EndPos == targetNode.transform.position)
+            {
+                return link;
+            }
+        }
+
+        return null;
+    }
+
+    public void RemoveLink (Node targetNode)
+    {
+        if (targetNode != null)
+        {
+            Link link = FindLinkAt(targetNode);
+            if (link != null)
+            {
+                 _linkedNodes.Remove(targetNode);
+                targetNode.LinkedNodes.Remove(this);
+                link.RemoveLink();  // Animation
+                Destroy(link, link.delay);
+            }
+        }
+    }
+
     Obstacle FindObstacle (Node targetNode)
     {
         Vector3 direction = targetNode.transform.position - transform.position;

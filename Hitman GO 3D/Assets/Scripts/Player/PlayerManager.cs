@@ -96,10 +96,6 @@ public class PlayerManager : TurnManager
             {
                 activable.Activate();
             }
-            else
-            {
-                Debug.LogWarning("PLAYERMANAGER ActivateActivables Error: activable is null");
-            }
         }
         else
         {
