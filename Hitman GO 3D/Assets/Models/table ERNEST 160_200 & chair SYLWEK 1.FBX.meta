@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: c7633ed2bb371b149a9b5e0b294392e0
+timeCreated: 1527186734
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Box021
+    100002: ChamferBox004
+    100004: ChamferBox005
+    100006: ChamferBox006
+    100008: ChamferBox007
+    100010: ChamferBox008
+    100012: ChamferBox092
+    100014: ChamferBox093
+    100016: ChamferBox094
+    100018: ChamferBox095
+    100020: ChamferBox096
+    100022: ChamferBox097
+    100024: ChamferBox098
+    100026: ChamferBox099
+    100028: ChamferBox100
+    100030: ChamferBox101
+    100032: ChamferBox102
+    100034: ChamferBox103
+    100036: ChamferBox104
+    100038: ERNEST 160_200
+    100040: SYLWEK 005
+    100042: //RootNode
+    100044: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_001"
+    100046: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_002"
+    100048: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_003"
+    100050: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_004"
+    400000: Box021
+    400002: ChamferBox004
+    400004: ChamferBox005
+    400006: ChamferBox006
+    400008: ChamferBox007
+    400010: ChamferBox008
+    400012: ChamferBox092
+    400014: ChamferBox093
+    400016: ChamferBox094
+    400018: ChamferBox095
+    400020: ChamferBox096
+    400022: ChamferBox097
+    400024: ChamferBox098
+    400026: ChamferBox099
+    400028: ChamferBox100
+    400030: ChamferBox101
+    400032: ChamferBox102
+    400034: ChamferBox103
+    400036: ChamferBox104
+    400038: ERNEST 160_200
+    400040: SYLWEK 005
+    400042: //RootNode
+    400044: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_001"
+    400046: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_002"
+    400048: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_003"
+    400050: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_004"
+    2100000: "\u0434\u0435\u0440\u0435\u0432\u043E"
+    2100002: "\u043A\u043E\u0436\u0430 \u0441\u0442\u0443\u043B\u044C\u044F"
+    2300000: Box021
+    2300002: ChamferBox004
+    2300004: ChamferBox005
+    2300006: ChamferBox006
+    2300008: ChamferBox007
+    2300010: ChamferBox008
+    2300012: ChamferBox092
+    2300014: ChamferBox093
+    2300016: ChamferBox094
+    2300018: ChamferBox095
+    2300020: ChamferBox096
+    2300022: ChamferBox097
+    2300024: ChamferBox098
+    2300026: ChamferBox099
+    2300028: ChamferBox100
+    2300030: ChamferBox101
+    2300032: ChamferBox102
+    2300034: ChamferBox103
+    2300036: ChamferBox104
+    2300038: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_001"
+    2300040: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_002"
+    2300042: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_003"
+    2300044: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_004"
+    3300000: Box021
+    3300002: ChamferBox004
+    3300004: ChamferBox005
+    3300006: ChamferBox006
+    3300008: ChamferBox007
+    3300010: ChamferBox008
+    3300012: ChamferBox092
+    3300014: ChamferBox093
+    3300016: ChamferBox094
+    3300018: ChamferBox095
+    3300020: ChamferBox096
+    3300022: ChamferBox097
+    3300024: ChamferBox098
+    3300026: ChamferBox099
+    3300028: ChamferBox100
+    3300030: ChamferBox101
+    3300032: ChamferBox102
+    3300034: ChamferBox103
+    3300036: ChamferBox104
+    3300038: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_001"
+    3300040: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_002"
+    3300042: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_003"
+    3300044: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_004"
+    4300000: ChamferBox092
+    4300002: Box021
+    4300004: ChamferBox093
+    4300006: ChamferBox094
+    4300008: ChamferBox095
+    4300010: ChamferBox096
+    4300012: ChamferBox097
+    4300014: ChamferBox098
+    4300016: ChamferBox099
+    4300018: ChamferBox100
+    4300020: ChamferBox101
+    4300022: ChamferBox102
+    4300024: ChamferBox103
+    4300026: ChamferBox104
+    4300028: ChamferBox004
+    4300030: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_004"
+    4300032: ChamferBox007
+    4300034: ChamferBox006
+    4300036: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_003"
+    4300038: ChamferBox005
+    4300040: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_001"
+    4300042: "\u043D\u043E\u0436\u043A\u0430_\u0441\u0442\u043E\u043B_002"
+    4300044: ChamferBox008
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

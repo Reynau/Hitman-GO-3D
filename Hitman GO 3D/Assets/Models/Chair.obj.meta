@@ -1,16 +1,18 @@
 fileFormatVersion: 2
-guid: 179301d1c524f934eb96df56fb6cea4b
-timeCreated: 1527183787
+guid: d82df2538e92357478f4e731a73bc969
+timeCreated: 1527185664
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: default
     400000: //RootNode
-    2100000: 'Material #2186'
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: banana
+    400002: default
+    2100000: defaultMat
+    2300000: default
+    3300000: default
+    4300000: default
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +43,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

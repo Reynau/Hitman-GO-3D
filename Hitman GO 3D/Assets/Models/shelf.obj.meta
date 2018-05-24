@@ -1,16 +1,60 @@
 fileFormatVersion: 2
-guid: 179301d1c524f934eb96df56fb6cea4b
-timeCreated: 1527183787
+guid: 03361218bc71ea644a7ffff9ffebe6c8
+timeCreated: 1527185615
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: 'Material #2186'
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: banana
+    100000: 03_-_Default
+    100002: 06_-_Default
+    100004: 07_-_Default
+    100006: 08_-_Default
+    100008: LENTYNA
+    100010: Material__49
+    100012: Material__50
+    100014: //RootNode
+    100016: shelveBrown
+    400000: 03_-_Default
+    400002: 06_-_Default
+    400004: 07_-_Default
+    400006: 08_-_Default
+    400008: LENTYNA
+    400010: Material__49
+    400012: Material__50
+    400014: //RootNode
+    400016: shelveBrown
+    2100000: 03_-_DefaultMat
+    2100002: 06_-_DefaultMat
+    2100004: 07_-_DefaultMat
+    2100006: 08_-_DefaultMat
+    2100008: LENTYNAMat
+    2100010: Material__49Mat
+    2100012: Material__50Mat
+    2100014: shelveBrownMat
+    2300000: 03_-_Default
+    2300002: 06_-_Default
+    2300004: 07_-_Default
+    2300006: 08_-_Default
+    2300008: LENTYNA
+    2300010: Material__49
+    2300012: Material__50
+    2300014: shelveBrown
+    3300000: 03_-_Default
+    3300002: 06_-_Default
+    3300004: 07_-_Default
+    3300006: 08_-_Default
+    3300008: LENTYNA
+    3300010: Material__49
+    3300012: Material__50
+    3300014: shelveBrown
+    4300000: 03_-_Default
+    4300002: 06_-_Default
+    4300004: 07_-_Default
+    4300006: 08_-_Default
+    4300008: LENTYNA
+    4300010: Material__49
+    4300012: Material__50
+    4300014: shelveBrown
   externalObjects: {}
   materials:
     importMaterials: 1

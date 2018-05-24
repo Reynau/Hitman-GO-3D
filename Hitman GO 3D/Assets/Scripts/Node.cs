@@ -168,7 +168,7 @@ public class Node : MonoBehaviour {
                  _linkedNodes.Remove(targetNode);
                 targetNode.LinkedNodes.Remove(this);
                 link.RemoveLink();  // Animation
-                Destroy(link, link.delay);
+                Destroy(link.gameObject, link.delay);
             }
         }
     }
