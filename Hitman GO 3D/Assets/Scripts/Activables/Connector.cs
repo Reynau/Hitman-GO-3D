@@ -6,13 +6,16 @@ public class Connector : Activable {
     bool _connectableNodes;
 
     public bool isStatic = false;
+    private bool _alreadyActivated = false;
     
     public Node activableNode;
     public Node targetNode;
 
     public float delay;
 
-    private void Awake()
+    public bool closeOnStart = true;
+
+    private void Awake ()
     {
         if (activableNode == null || targetNode == null)
         {
@@ -27,30 +30,58 @@ public class Connector : Activable {
         }
     }
 
-    public override void Activate()
+    private void Start ()
     {
-        if (!_connectableNodes)
+        _active = true; // Connectors start active to permit link propagation
+    }
+
+    public override void Init ()
+    {
+        if (activableNode != null && targetNode != null)
+        {
+            if (closeOnStart)
+            {
+                Disconnect();
+            }
+        }
+    }
+
+    public override void Activate ()
+    {
+        if (!_connectableNodes || (isStatic && _alreadyActivated))
         {
             return;
         }
 
         if (activableNode != null && targetNode != null)
         {
+            _alreadyActivated = true;
+
             if (!_active)
             {
-                StartCoroutine(LinkNodeRoutine());
-                _active = true;
+                Connect();
             }
-            else if (!isStatic)
+            else
             {
-                StartCoroutine(RemoveNodeRoutine());
-                 _active = false;
+                Disconnect();
             }
         }
         else
         {
             Debug.LogWarning("ACTIVABLE Activate Error: activableNode or targetNode is null");
         }
+    }
+
+    public void Connect ()
+    {
+        StartCoroutine(LinkNodeRoutine());
+        _active = true;
+    }
+
+    public void Disconnect()
+    {
+        StartCoroutine(RemoveNodeRoutine());
+        _active = false;
     }
 
     IEnumerator LinkNodeRoutine ()

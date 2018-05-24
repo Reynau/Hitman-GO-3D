@@ -1,16 +1,63 @@
 fileFormatVersion: 2
-guid: 179301d1c524f934eb96df56fb6cea4b
-timeCreated: 1527183787
+guid: 3c9530fe0aaf04047aa2e71cef29805a
+timeCreated: 1527186733
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: 'Material #2186'
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: banana
+    100000: beam1
+    100002: beam2
+    100004: beam3
+    100006: behind_drawer
+    100008: caps
+    100010: drawer1
+    100012: drawer2
+    100014: drawer3
+    100016: main
+    100018: //RootNode
+    100020: sympoint
+    400000: beam1
+    400002: beam2
+    400004: beam3
+    400006: behind_drawer
+    400008: caps
+    400010: drawer1
+    400012: drawer2
+    400014: drawer3
+    400016: main
+    400018: //RootNode
+    400020: sympoint
+    2100000: WOOD_PANDORA
+    2100002: Stainless Normal
+    2100004: binnenkant
+    2100006: doppen
+    2300000: beam1
+    2300002: beam2
+    2300004: beam3
+    2300006: behind_drawer
+    2300008: caps
+    2300010: drawer1
+    2300012: drawer2
+    2300014: drawer3
+    2300016: main
+    3300000: beam1
+    3300002: beam2
+    3300004: beam3
+    3300006: behind_drawer
+    3300008: caps
+    3300010: drawer1
+    3300012: drawer2
+    3300014: drawer3
+    3300016: main
+    4300000: drawer1
+    4300002: drawer2
+    4300004: drawer3
+    4300006: beam1
+    4300008: main
+    4300010: beam3
+    4300012: beam2
+    4300014: behind_drawer
+    4300016: caps
   externalObjects: {}
   materials:
     importMaterials: 1

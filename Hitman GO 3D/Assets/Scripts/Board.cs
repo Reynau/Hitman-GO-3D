@@ -27,6 +27,8 @@ public class Board : MonoBehaviour {
     public float drawGoalDelay = 1f;
     public iTween.EaseType drawGoalEaseType = iTween.EaseType.easeOutExpo;
 
+    public float delayToCloseDoors = 5f;
+
     public float initBoardDelay = 2f;
 
     PlayerMover _player_mover;
@@ -187,12 +189,13 @@ public class Board : MonoBehaviour {
         if (_playerNode != null)
         {
             StartCoroutine(InitBoardRoutine());
-            InitActivables();
         }
     }
 
     IEnumerator InitBoardRoutine () {
         yield return new WaitForSeconds(initBoardDelay);
         _playerNode.InitNode();
+        yield return new WaitForSeconds(delayToCloseDoors);
+        InitActivables();
     }
 }
