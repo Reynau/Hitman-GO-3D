@@ -38,6 +38,13 @@ public class Board : MonoBehaviour {
     public float capturePositionGizmoSize = 0.4f;
     public Color capturePositionGizmoColor = Color.blue;
 
+    public List<Transform> capturedCollectiblePositions;
+    int _currentCapturedCollectiblePosition = 0;
+    public int CurrentCapturedCollectiblePosition { get { return _currentCapturedCollectiblePosition; } set { _currentCapturedCollectiblePosition = value; } }
+
+    public float capturedCollectibleGizmoSize = 0.3f;
+    public Color capturedCollectibleGizmoColor = Color.green;
+
     void Awake()
     {
         _player_mover = Object.FindObjectOfType<PlayerMover>().GetComponent<PlayerMover>();
@@ -106,6 +113,22 @@ public class Board : MonoBehaviour {
         return null;
     }
 
+    public Collectible FindCollectibleAt(Node node)
+    {
+        Collectible[] collectibles = Object.FindObjectsOfType<Collectible>() as Collectible[];
+
+        foreach (Collectible collectible in collectibles)
+        {
+            if (collectible == null) continue;
+
+            if (collectible.transform.position == node.transform.position)
+            {
+                return collectible;
+            }
+        }
+        return null;
+    }
+
     public void UpdatePlayerNode ()
     {
         _playerNode = FindPlayerNode();
@@ -123,6 +146,12 @@ public class Board : MonoBehaviour {
         foreach (Transform capturePos in capturePositions)
         {
             Gizmos.DrawCube(capturePos.position, Vector3.one * capturePositionGizmoSize);
+        }
+
+        Gizmos.color = capturedCollectibleGizmoColor;
+        foreach (Transform capturedCollectiblePos in capturedCollectiblePositions)
+        {
+            Gizmos.DrawCube(capturedCollectiblePos.position, Vector3.one * capturedCollectibleGizmoSize);
         }
     }
 

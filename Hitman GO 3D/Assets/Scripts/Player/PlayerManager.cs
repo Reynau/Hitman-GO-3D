@@ -103,9 +103,26 @@ public class PlayerManager : TurnManager
         }
     }
 
+    void PickCollectibles()
+    {
+        if (_board != null)
+        {
+            Collectible collectible = _board.FindCollectibleAt(_board.PlayerNode);
+            if (collectible != null)
+            {
+                collectible.PickCollectible();
+            }
+        }
+        else
+        {
+            Debug.LogWarning("PLAYERMANAGER PickCollectible Error: _board is null");
+        }
+    }
+
     public override void FinishTurn()
     {
         ActivateActivables();
+        PickCollectibles();
         CaptureEnemies();
         base.FinishTurn();
     }
