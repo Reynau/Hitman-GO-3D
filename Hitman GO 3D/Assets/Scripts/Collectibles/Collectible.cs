@@ -8,18 +8,16 @@ public class Collectible : MonoBehaviour
 
     public float delay;
 
-    protected bool _picked = false;
+    public bool isPicked = false;
 
     public UnityEvent pickCollectibleEvent;
 
     public void PickCollectible()
     {
-        Debug.Log("CALL ROUTINE PICK COLLECTIBLE! ==================");
-        Debug.Log(_picked);
-        if (!_picked)
+        if (!isPicked)
         {
             StartCoroutine(PickRoutine());
-            _picked = true;
+            isPicked = true;
         }
     }
 

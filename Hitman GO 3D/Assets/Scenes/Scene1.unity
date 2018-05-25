@@ -4731,8 +4731,9 @@ GameObject:
   - component: {fileID: 842787761}
   - component: {fileID: 842787762}
   - component: {fileID: 842787763}
+  - component: {fileID: 842787764}
   m_Layer: 0
-  m_Name: Collectible
+  m_Name: Hamb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4764,10 +4765,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0
+  isPicked: 0
   pickCollectibleEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 842787763}
+        m_MethodName: Pick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 842787764}
         m_MethodName: Pick
         m_Mode: 1
         m_Arguments:
@@ -4793,10 +4806,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offscreenOffset: {x: 0, y: 10, z: -10}
   pickDelay: 0
-  offscreenDelay: 1
+  offscreenDelay: 3
   iTweenDelay: 0
   easeType: 11
-  moveTime: 0.5
+  moveTime: 1
+--- !u!114 &842787764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 842787760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f17e7cdbd2e7a47a2e4bc2f4ce9b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleAnimController: {fileID: 9305121}
+  collectiblePickTrigger: isPicked
 --- !u!1001 &847192976
 Prefab:
   m_ObjectHideFlags: 0
@@ -5301,27 +5327,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4779895620523092, guid: 25d4fd2f044e14f4faf1c670f3281124,
     type: 2}
   m_PrefabInternal: {fileID: 916614112}
---- !u!1 &932912531 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1547945778267624, guid: c07668629e1440e47935d919e0c2b36e,
+--- !u!114 &932912533 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114132912027702696, guid: c07668629e1440e47935d919e0c2b36e,
     type: 2}
   m_PrefabInternal: {fileID: 1086414387}
---- !u!114 &932912532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 932912531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d56312b0b5f7be469e7930506bcc67b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initiallyOpen: 1
-  pivot: {fileID: 1573004622}
-  animationTime: 0.5
-  animationDelay: 0
-  easeType: 14
 --- !u!1 &933214559
 GameObject:
   m_ObjectHideFlags: 0
@@ -6143,6 +6154,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 114132912027702696, guid: c07668629e1440e47935d919e0c2b36e,
+        type: 2}
+      propertyPath: initiallyOpen
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c07668629e1440e47935d919e0c2b36e, type: 2}
   m_IsPrefabParent: 0
@@ -6341,7 +6357,7 @@ MonoBehaviour:
   activateActivableEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 932912532}
+      - m_Target: {fileID: 932912533}
         m_MethodName: Animate
         m_Mode: 1
         m_Arguments:
@@ -8178,8 +8194,9 @@ GameObject:
   - component: {fileID: 1413233951}
   - component: {fileID: 1413233952}
   - component: {fileID: 1413233953}
+  - component: {fileID: 1413233954}
   m_Layer: 0
-  m_Name: Collectible (1)
+  m_Name: Appl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8211,10 +8228,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0
+  isPicked: 0
   pickCollectibleEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1413233953}
+        m_MethodName: Pick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1413233954}
         m_MethodName: Pick
         m_Mode: 1
         m_Arguments:
@@ -8240,10 +8269,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offscreenOffset: {x: 0, y: 10, z: -10}
   pickDelay: 0
-  offscreenDelay: 1
+  offscreenDelay: 3
   iTweenDelay: 0
   easeType: 11
-  moveTime: 0.5
+  moveTime: 1
+--- !u!114 &1413233954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413233950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f17e7cdbd2e7a47a2e4bc2f4ce9b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleAnimController: {fileID: 1997991035}
+  collectiblePickTrigger: isPicked
 --- !u!1 &1415781338
 GameObject:
   m_ObjectHideFlags: 0
@@ -9352,11 +9394,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4762219120083434, guid: 61c061762895f4875a2f95da407a4f96,
     type: 2}
   m_PrefabInternal: {fileID: 1564286412}
---- !u!1 &1573004622 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1085617222379814, guid: c07668629e1440e47935d919e0c2b36e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1086414387}
 --- !u!1001 &1577141595
 Prefab:
   m_ObjectHideFlags: 0

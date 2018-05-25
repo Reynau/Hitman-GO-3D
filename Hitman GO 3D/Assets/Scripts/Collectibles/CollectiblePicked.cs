@@ -10,11 +10,11 @@ public class CollectiblePicked : MonoBehaviour
     Board _board;
     Camera _cam;
     public float pickDelay = 0f;
-    public float offscreenDelay = 1f;
+    public float offscreenDelay = 3f;
 
     public float iTweenDelay = 0f;
     public iTween.EaseType easeType = iTween.EaseType.easeInOutQuint;
-    public float moveTime = 0.5f;
+    public float moveTime = 1f;
 
     void Awake()
     {
@@ -44,7 +44,7 @@ public class CollectiblePicked : MonoBehaviour
         yield return new WaitForSeconds(pickDelay);
 
         Vector3 offscreenPos = _cam.transform.position + _cam.transform.forward;
-        offscreenPos.y += _cam.transform.forward.y;
+        offscreenPos.y += _cam.transform.forward.y * 0.7f;
 
         MoveOffBoard(offscreenPos);
 

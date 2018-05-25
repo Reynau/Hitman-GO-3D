@@ -15,6 +15,9 @@ public class PlayerManager : TurnManager
 
     Board _board;
 
+    public int healthyCount = 0;
+    public int fastFoodCount = 0;
+
     public UnityEvent deathEvent;
 
     protected override void Awake()
@@ -110,6 +113,14 @@ public class PlayerManager : TurnManager
             Collectible collectible = _board.FindCollectibleAt(_board.PlayerNode);
             if (collectible != null)
             {
+                if (collectible.name == "Appl" || collectible.name == "Bana" || collectible.name == "Oran")
+                {
+                    healthyCount++;
+                }
+                else
+                {
+                    fastFoodCount++;
+                }
                 collectible.PickCollectible();
             }
         }
