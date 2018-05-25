@@ -10,7 +10,7 @@ public class CollectiblePicked : MonoBehaviour
     Board _board;
     Camera _cam;
     public float pickDelay = 0f;
-    public float offscreenDelay = 3f;
+    public float offscreenDelay = 0.5f;
 
     public float iTweenDelay = 0f;
     public iTween.EaseType easeType = iTween.EaseType.easeInOutQuint;

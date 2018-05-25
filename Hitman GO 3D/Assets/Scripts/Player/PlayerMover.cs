@@ -24,6 +24,7 @@ public class PlayerMover : Mover {
             _playerCompass.ShowArrows(false);
         }
 
+        faceDestination = true;
         yield return StartCoroutine(base.MoveRoutine(destinationPos, delayTime));
 
         UpdateBoard();

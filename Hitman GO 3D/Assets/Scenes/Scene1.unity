@@ -4806,7 +4806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offscreenOffset: {x: 0, y: 10, z: -10}
   pickDelay: 0
-  offscreenDelay: 3
+  offscreenDelay: 0.5
   iTweenDelay: 0
   easeType: 11
   moveTime: 1
@@ -8269,7 +8269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offscreenOffset: {x: 0, y: 10, z: -10}
   pickDelay: 0
-  offscreenDelay: 3
+  offscreenDelay: 0.5
   iTweenDelay: 0
   easeType: 11
   moveTime: 1
@@ -10746,7 +10746,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1720057313}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -2, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10755,7 +10755,7 @@ Transform:
   - {fileID: 341481342}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1720057315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10803,6 +10803,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMover: {fileID: 0}
   playerInput: {fileID: 0}
+  healthyCount: 0
+  fastFoodCount: 0
   deathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -10960,19 +10962,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4712024491682072, guid: e9add6c0fd9934005b30c71f9718f31d, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4712024491682072, guid: e9add6c0fd9934005b30c71f9718f31d, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4712024491682072, guid: e9add6c0fd9934005b30c71f9718f31d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4712024491682072, guid: e9add6c0fd9934005b30c71f9718f31d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4712024491682072, guid: e9add6c0fd9934005b30c71f9718f31d, type: 2}
       propertyPath: m_RootOrder
@@ -10980,7 +10982,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4712024491682072, guid: e9add6c0fd9934005b30c71f9718f31d, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4712024491682072, guid: e9add6c0fd9934005b30c71f9718f31d, type: 2}
       propertyPath: m_LocalScale.x
