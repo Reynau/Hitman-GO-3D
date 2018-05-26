@@ -130,10 +130,28 @@ public class PlayerManager : TurnManager
         }
     }
 
+    void PickSniper()
+    {
+        if (_board != null)
+        {
+            Sniper sniper = _board.FindSniperAt(_board.PlayerNode);
+            if (sniper != null)
+            {
+                sniper.PickSniper();
+                playerMover.KillNearestEnemy();
+            }
+        }
+        else
+        {
+            Debug.LogWarning("PLAYERMANAGER PickSniper Error: _board is null");
+        }
+    }
+
     public override void FinishTurn()
     {
         ActivateActivables();
         PickCollectibles();
+        PickSniper();
         CaptureEnemies();
         base.FinishTurn();
     }

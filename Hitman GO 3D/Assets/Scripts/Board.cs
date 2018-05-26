@@ -131,6 +131,20 @@ public class Board : MonoBehaviour {
         return null;
     }
 
+    public Sniper FindSniperAt(Node node)
+    {
+        Sniper sniper = Object.FindObjectOfType<Sniper>();
+        
+        if (sniper != null)
+        {
+            if (sniper.transform.position == node.transform.position)
+            {
+                return sniper;
+            }
+        }
+        return null;
+    }
+
     public void UpdatePlayerNode ()
     {
         _playerNode = FindPlayerNode();
