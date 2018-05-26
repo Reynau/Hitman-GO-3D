@@ -43,7 +43,7 @@ public class PlayerCompass : MonoBehaviour {
 
     void MoveArrow (GameObject arrowInstance)
     {
-        iTween.MoveBy(arrowInstance, iTween.Hash(
+            iTween.MoveBy(arrowInstance, iTween.Hash(
             "z", endDistance - startDistance,
             "looptype", iTween.LoopType.pingPong,
             "time", moveTime,
@@ -101,6 +101,8 @@ public class PlayerCompass : MonoBehaviour {
             iTween.Stop(_arrows[i]);
             Vector3 dirVector = new Vector3(Board.directions[i].normalized.x, 0f, Board.directions[i].normalized.y);
             _arrows[i].transform.position = transform.position + dirVector * startDistance;
+            Quaternion rotation = Quaternion.LookRotation(dirVector);
+            _arrows[i].transform.rotation = rotation;
         }
     }
 }
