@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour {
 
     public UnityEvent mainMenuEvent;
     public UnityEvent selectLevelEvent;
+    public UnityEvent controlsEvent;
 
     private void Start()
     {
@@ -26,6 +27,12 @@ public class MenuManager : MonoBehaviour {
     {
         Debug.Log("Change to select level");
         selectLevelEvent.Invoke();
+    }
+
+    public void ChangeToControls()
+    {
+        Debug.Log("Change to controls");
+        controlsEvent.Invoke();
     }
 
     public void LoadLevel (int level)
