@@ -7,8 +7,6 @@ public class Sniper : Activable
 {
     public float delay;
 
-    public UnityEvent pickSniperEvent;
-
     Board _board;
     PlayerMover _player_mover;
 
@@ -30,7 +28,7 @@ public class Sniper : Activable
     IEnumerator PickSniperRoutine()
     {
         yield return new WaitForSeconds(delay);
-        pickSniperEvent.Invoke();
+        activateActivableEvent.Invoke();
         EnemyManager nearestEnemy = _board.FindNearestEnemy();
 
         if (nearestEnemy != null)
