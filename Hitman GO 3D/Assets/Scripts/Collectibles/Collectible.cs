@@ -14,6 +14,8 @@ public class Collectible : MonoBehaviour
     Board _board;
     Camera _cam;
 
+    public CollectibleType type;
+
     public bool isPicked = false;
 
     public float pickDelay = 0f;

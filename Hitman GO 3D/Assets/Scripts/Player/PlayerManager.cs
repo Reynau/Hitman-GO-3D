@@ -113,11 +113,11 @@ public class PlayerManager : TurnManager
             Collectible collectible = _board.FindCollectibleAt(_board.PlayerNode);
             if (collectible != null)
             {
-                if (collectible.name == "Appl" || collectible.name == "Bana" || collectible.name == "Oran")
+                if (collectible.type == CollectibleType.HealthyFood)
                 {
                     healthyCount++;
                 }
-                else
+                else if (collectible.type == CollectibleType.FastFood)
                 {
                     fastFoodCount++;
                 }
