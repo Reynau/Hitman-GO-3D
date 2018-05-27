@@ -2657,6 +2657,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25d4fd2f044e14f4faf1c670f3281124, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &368611556 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114007892352392556, guid: c07668629e1440e47935d919e0c2b36e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1086414387}
+  m_Script: {fileID: 11500000, guid: 7d56312b0b5f7be469e7930506bcc67b, type: 3}
 --- !u!1001 &400818971
 Prefab:
   m_ObjectHideFlags: 0
@@ -6555,6 +6561,14 @@ Prefab:
       propertyPath: initiallyOpen
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4143903397652206, guid: c07668629e1440e47935d919e0c2b36e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143903397652206, guid: c07668629e1440e47935d919e0c2b36e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c07668629e1440e47935d919e0c2b36e, type: 2}
   m_IsPrefabParent: 0
@@ -6753,7 +6767,7 @@ MonoBehaviour:
   activateActivableEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 368611556}
         m_MethodName: Animate
         m_Mode: 1
         m_Arguments:
@@ -7754,7 +7768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1251912015
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11242,7 +11256,7 @@ MonoBehaviour:
   drawGoalTime: 2
   drawGoalDelay: 1
   drawGoalEaseType: 16
-  delayToCloseDoors: 5
+  delayToCloseDoors: 0
   initBoardDelay: 1
   capturePositions:
   - {fileID: 599760471}
