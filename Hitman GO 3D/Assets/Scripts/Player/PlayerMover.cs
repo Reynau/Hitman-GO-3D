@@ -45,39 +45,4 @@ public class PlayerMover : Mover {
             _board.UpdatePlayerNode();
         }
     }
-
-    public void KillNearestEnemy()
-    {
-        EnemyManager[] enemies = Object.FindObjectsOfType<EnemyManager>() as EnemyManager[];
-        EnemyManager nearestEnemy = null;
-
-        foreach (EnemyManager enemy in enemies)
-        {
-            if (nearestEnemy == null)
-            {
-                nearestEnemy = enemy;
-            }
-            else
-            {
-                EnemyMover mover = enemy.GetComponent<EnemyMover>();
-                EnemyMover nearestMover = nearestEnemy.GetComponent<EnemyMover>();
-                if (CalculateDistance(mover.CurrentNode) < CalculateDistance(nearestMover.CurrentNode))
-                {
-                    nearestEnemy = enemy;
-                }
-            }
-        }
-        if (nearestEnemy != null)
-        {
-            EnemyMover nearestMoverDest = nearestEnemy.GetComponent<EnemyMover>();
-            destination = nearestMoverDest.CurrentNode.transform.position;
-            FaceDestination();
-            nearestEnemy.Die();
-        }
-    }
-
-    double CalculateDistance(Node target)
-    {
-        return System.Math.Sqrt(System.Math.Pow((target.transform.position.x - transform.position.x), 2) + (System.Math.Pow((target.transform.position.z - transform.position.z), 2)));
-    }
 }

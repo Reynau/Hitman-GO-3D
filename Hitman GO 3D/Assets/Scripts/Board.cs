@@ -145,6 +145,32 @@ public class Board : MonoBehaviour {
         return null;
     }
 
+    public EnemyManager FindNearestEnemy()
+    {
+        Vector3 playerPosition = _player_mover.transform.position;
+
+        EnemyManager[] enemies = Object.FindObjectsOfType<EnemyManager>() as EnemyManager[];
+        EnemyManager nearestEnemy = null;
+
+        foreach (EnemyManager enemy in enemies)
+        {
+            if (nearestEnemy == null)
+            {
+                nearestEnemy = enemy;
+            }
+            else
+            {
+                Vector3 enemyPosition = enemy.transform.position;
+                Vector3 nearestEnemyPosition = nearestEnemy.transform.position;
+                if (Vector3.Distance(playerPosition, enemyPosition) < Vector3.Distance(playerPosition, nearestEnemyPosition))
+                {
+                    nearestEnemy = enemy;
+                }
+            }
+        }
+        return nearestEnemy;
+    }
+
     public void UpdatePlayerNode ()
     {
         _playerNode = FindPlayerNode();

@@ -117,7 +117,7 @@ public class Mover : MonoBehaviour {
         }
     }
 
-    protected void FaceDestination ()
+    public void FaceDestination ()
     {
         Vector3 movementDir = destination - transform.position;
         Quaternion newRotation = Quaternion.LookRotation(movementDir);
