@@ -15,6 +15,9 @@ public class PlayerManager : TurnManager
 
     Board _board;
 
+    CollectibleLabel _cl;
+    CollectibleLabel1 _cl1;
+
     public int healthyCount = 0;
     public int fastFoodCount = 0;
 
@@ -29,6 +32,11 @@ public class PlayerManager : TurnManager
         playerMover = GetComponent<PlayerMover>();
         playerInput = GetComponent<PlayerInput>();
         playerInput.InputEnabled = true;
+
+        _cl = Object.FindObjectOfType<CollectibleLabel>().GetComponent<CollectibleLabel>();
+        _cl.SetCount();
+        _cl1 = Object.FindObjectOfType<CollectibleLabel1>().GetComponent<CollectibleLabel1>();
+        _cl1.SetCount();
     }
 
     void Update () {
@@ -116,10 +124,12 @@ public class PlayerManager : TurnManager
                 if (collectible.name == "Appl" || collectible.name == "Bana" || collectible.name == "Oran")
                 {
                     healthyCount++;
+                    _cl.SetCount();
                 }
                 else
                 {
                     fastFoodCount++;
+                    _cl1.SetCount();
                 }
                 collectible.PickCollectible();
             }
