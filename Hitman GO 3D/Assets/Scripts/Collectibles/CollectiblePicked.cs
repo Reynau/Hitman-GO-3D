@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class CollectiblePicked : MonoBehaviour
 {
+    Board _board;
+    Camera _cam;
 
     public Vector3 offscreenOffset = new Vector3(0.5f, 0f, 0f);
 
-    Board _board;
-    Camera _cam;
     public float pickDelay = 0f;
     public float offscreenDelay = 0.5f;
 
     public float iTweenDelay = 0f;
     public iTween.EaseType easeType = iTween.EaseType.easeInOutQuint;
     public float moveTime = 1f;
+
+    public Animator collectibleAnimController;
+
+    public string collectiblePickTrigger = "isPicked";
 
     void Awake()
     {
@@ -36,6 +40,10 @@ public class CollectiblePicked : MonoBehaviour
 
     public void Pick()
     {
+        if (collectibleAnimController != null)
+        {
+            collectibleAnimController.SetTrigger(collectiblePickTrigger);
+        }
         StartCoroutine(PickRoutine());
     }
 
