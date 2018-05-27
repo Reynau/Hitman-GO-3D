@@ -35,6 +35,12 @@ public class MenuManager : MonoBehaviour {
         controlsEvent.Invoke();
     }
 
+    public void LoadMenu ()
+    {
+        Debug.Log("Loading menu");
+        SceneManager.LoadScene("Menu");
+    }
+
     public void LoadLevel (int level)
     {
         Debug.Log("Loading level " + level);
