@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum CollectibleType
+{
+    FastFood,
+    HealthyFood
+}
+
 public class Collectible : MonoBehaviour
 {
-
     public float delay;
 
     public bool isPicked = false;

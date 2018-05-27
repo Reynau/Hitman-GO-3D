@@ -6,19 +6,31 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class CollectibleLabel : MonoBehaviour
 {
-    Text _text;
+    public CollectibleType collectibleType = CollectibleType.FastFood;
+
+    Text _textLabel;
     PlayerManager _player;
+
     void Awake()
     {
-        _text = GetComponent<Text>();
+        _textLabel = gameObject.GetComponent<Text>();
         _player = Object.FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>();
     }
 
-    public void SetCount()
+    void Start()
     {
-        if (_text != null && _player != null)
+        if (_textLabel != null && _player != null)
         {
-            _text.text = "Healthy Food: " + _player.fastFoodCount.ToString() + "/3";
+            switch (collectibleType)
+            {
+                case CollectibleType.FastFood:
+                    _textLabel.text = "Fast Food: " + _player.fastFoodCount.ToString() + "/3";
+                    break;
+                case CollectibleType.HealthyFood:
+                    _textLabel.text = "Healthy Food: " + _player.healthyCount.ToString() + "/3";
+                    break;
+            }
+            
         }
     }
 }
