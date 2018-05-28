@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.8
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.406059, g: 0.45149565, b: 0.51847386, a: 0.8}
+  m_IndirectSpecularColor: {r: 0.4061077, g: 0.45027268, b: 0.51166326, a: 0.8}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000006, guid: 9e65d2965620ad14f8c711301f8805c0,
+  m_LightingDataAsset: {fileID: 112000002, guid: 9e65d2965620ad14f8c711301f8805c0,
     type: 2}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -2133,6 +2133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b5600094923844d8c4d7c4d82dbc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishedRotations: 1
   activateActivableEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5156,6 +5157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf66965764275a4f80eb70a1b4afd33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishedRotations: 1
   activateActivableEvent:
     m_PersistentCalls:
       m_Calls:
