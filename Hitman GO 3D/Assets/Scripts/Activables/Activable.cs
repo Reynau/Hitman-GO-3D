@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Activable : MonoBehaviour {
 
     protected bool _active = false;
+    public bool finishedRotations = true;
 
     public UnityEvent activateActivableEvent;
 
@@ -14,8 +15,8 @@ public class Activable : MonoBehaviour {
 
     }
 
-	public virtual void Activate ()
+	public virtual IEnumerator Activate ()
     {
-
+        yield return new WaitForSeconds(0f);
     }
 }

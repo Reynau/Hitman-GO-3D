@@ -90,20 +90,21 @@ public class PlayerManager : TurnManager
         }
     }
 
-    void ActivateActivables ()
+    IEnumerator ActivateActivables ()
     {
         if (_board != null)
         {
             Activable activable = _board.FindActivableAt(_board.PlayerNode);
             if (activable != null)
             {
-                activable.Activate();
+                yield return StartCoroutine(activable.Activate());
             }
         }
         else
         {
             Debug.LogWarning("PLAYERMANAGER ActivateActivables Error: _board is null");
         }
+        yield return new WaitForSeconds(0f);
     }
 
     void PickCollectibles()
@@ -132,7 +133,12 @@ public class PlayerManager : TurnManager
 
     public override void FinishTurn()
     {
-        ActivateActivables();
+        StartCoroutine(WaitToFinishTurn());
+    }
+
+    IEnumerator WaitToFinishTurn()
+    {
+        yield return StartCoroutine(ActivateActivables());
         PickCollectibles();
         CaptureEnemies();
         base.FinishTurn();

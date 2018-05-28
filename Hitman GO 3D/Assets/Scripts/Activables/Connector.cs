@@ -46,30 +46,33 @@ public class Connector : Activable {
         }
     }
 
-    public override void Activate ()
+    public override IEnumerator Activate ()
     {
         if (!_connectableNodes || (isStatic && _alreadyActivated))
         {
-            return;
-        }
-
-        if (activableNode != null && targetNode != null)
-        {
-            _alreadyActivated = true;
-
-            if (!_active)
-            {
-                Connect();
-            }
-            else
-            {
-                Disconnect();
-            }
+            
         }
         else
         {
-            Debug.LogWarning("ACTIVABLE Activate Error: activableNode or targetNode is null");
+            if (activableNode != null && targetNode != null)
+            {
+                _alreadyActivated = true;
+
+                if (!_active)
+                {
+                    Connect();
+                }
+                else
+                {
+                    Disconnect();
+                }
+            }
+            else
+            {
+                Debug.LogWarning("ACTIVABLE Activate Error: activableNode or targetNode is null");
+            }
         }
+        yield return new WaitForSeconds(0f);
     }
 
     public void Connect ()

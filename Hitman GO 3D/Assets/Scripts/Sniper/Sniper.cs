@@ -16,11 +16,11 @@ public class Sniper : Activable
         _player_mover = Object.FindObjectOfType<PlayerMover>().GetComponent<PlayerMover>();
     }
     
-    public override void Activate()
+    public override IEnumerator Activate()
     {
         if (!_active)
         {
-            StartCoroutine(PickSniperRoutine());
+            yield return StartCoroutine(PickSniperRoutine());
             _active = true;
         }
     }
