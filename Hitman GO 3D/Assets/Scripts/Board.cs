@@ -7,10 +7,10 @@ public class Board : MonoBehaviour {
 
     public static readonly Vector2[] directions =
     {
-        new Vector2(spacing, 0f),
-        new Vector2(-spacing, 0f),
-        new Vector2(0f, spacing),
-        new Vector2(0f, -spacing)
+        new Vector2(spacing, 0f),   // E
+        new Vector2(-spacing, 0f),  // W
+        new Vector2(0f, spacing),   // N
+        new Vector2(0f, -spacing)   // S
     };
 
     List<Node> _allNodes = new List<Node>();
