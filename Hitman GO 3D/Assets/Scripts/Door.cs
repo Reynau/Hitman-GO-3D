@@ -33,21 +33,26 @@ public class Door : MonoBehaviour {
 
         if (!_open)
         {
+            Debug.Log("opening");
             iTween.RotateTo(pivot, iTween.Hash(
                 "rotation", openRotation,
                 "time", animationTime,
                 "easetype", easeType,
-                "delay", animationDelay
+                "delay", animationDelay,
+                "islocal", true
             ));
             _open = true;
         }
         else
         {
+            Debug.Log("closing");
+            Debug.Log(closeRotation);
             iTween.RotateTo(pivot, iTween.Hash(
                 "rotation", closeRotation,
                 "time", animationTime,
                 "easetype", easeType,
-                "delay", animationDelay
+                "delay", animationDelay,
+                "islocal", true
             ));
             _open = false;
         }
