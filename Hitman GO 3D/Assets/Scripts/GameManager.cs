@@ -50,12 +50,14 @@ public class GameManager : MonoBehaviour {
     }
 
     public float startPlayingDelay = 1f;
+    public string nextLevel;
 
     public UnityEvent setupEvent;
     public UnityEvent startLevelEvent;
     public UnityEvent playLevelEvent;
     public UnityEvent endLevelEvent;
     public UnityEvent loseLevelEvent;
+
 
     void Awake () {
         _board = Object.FindObjectOfType<Board>().GetComponent<Board>();
@@ -170,11 +172,14 @@ public class GameManager : MonoBehaviour {
             // _hasLevelFinished = true
             yield return null;
         }
-
-        RestartLevel();
     }
 
-    void RestartLevel ()
+    public void NextLevel ()
+    {
+        SceneManager.LoadScene(nextLevel);
+    }
+
+    public void RestartLevel ()
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
