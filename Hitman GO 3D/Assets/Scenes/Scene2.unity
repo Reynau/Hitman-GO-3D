@@ -3171,7 +3171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &390734598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3211,7 +3211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultProfile: {fileID: 11400000, guid: b637943ffb656eb4a95a344b5bc1d8c1, type: 2}
   blurProfile: {fileID: 11400000, guid: bedcad4a88c71904f8cf17b031020499, type: 2}
-  cameraPostProcess: {fileID: 0}
+  cameraPostProcess: {fileID: 159906769}
 --- !u!1001 &397543037
 Prefab:
   m_ObjectHideFlags: 0
@@ -12656,7 +12656,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1766207996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: -6}
+  m_LocalPosition: {x: 2, y: 0, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 514720711}
