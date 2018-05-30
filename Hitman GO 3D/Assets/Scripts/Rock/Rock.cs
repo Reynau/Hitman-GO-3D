@@ -93,7 +93,7 @@ public class Rock : Activable
                 {
                     enemy.Die();
                 }
-                else
+                else if (!enemy.IsDead)
                 {
                     List<Node> neighs = mover.CurrentNode.FindNeighbors(_board.AllNodes);
                     Node nearestNode = FindNearestNode(neighs, nodeDest, mover.CurrentNode);
