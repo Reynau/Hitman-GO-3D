@@ -8,7 +8,9 @@ public class Mover : MonoBehaviour {
     public bool faceDestination = false;
     public bool isMoving = false;
     public iTween.EaseType easeType;
+    public iTween.EaseType easeTypePath;
 
+    public float delay = 2f;
     public float moveSpeed = 1.5f;
     public float iTweenDelay = 0f;
     public float rotateTime = 0.5f;
@@ -63,16 +65,28 @@ public class Mover : MonoBehaviour {
             FaceDestination();
             yield return new WaitForSeconds(0.25f);
         }
-        yield return new WaitForSeconds(delayTime);
-        iTween.MoveTo(gameObject, iTween.Hash(
-            "x", destinationPos.x,
-            "y", destinationPos.y,
-            "z", destinationPos.z,
-            "delay", iTweenDelay,
-            "easetype", easeType,
-            "speed", moveSpeed
-        ));
-
+        if (gameObject.name == "Player")
+        {
+            Vector3 mid = transform.position + ((destinationPos - transform.position) / 2) + new Vector3(0f, 1f, 0f);
+            Vector3[] path = { transform.position, mid, destinationPos };
+            iTween.MoveTo(gameObject, iTween.Hash(
+                "path", path,
+                "easetype", easeTypePath,
+                "time", delay
+            ));
+        }
+        else
+        {
+            yield return new WaitForSeconds(delayTime);
+            iTween.MoveTo(gameObject, iTween.Hash(
+                "x", destinationPos.x,
+                "y", destinationPos.y,
+                "z", destinationPos.z,
+                "delay", iTweenDelay,
+                "easetype", easeType,
+                "speed", moveSpeed
+            ));
+        }
         while (Vector3.Distance(destinationPos, transform.position) > 0.01f)
         {
             yield return null;
