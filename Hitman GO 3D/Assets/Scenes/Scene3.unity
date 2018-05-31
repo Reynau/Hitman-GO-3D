@@ -9094,6 +9094,21 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 114534933452626110, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5,
+        type: 2}
+      propertyPath: easeType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114534933452626110, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5,
+        type: 2}
+      propertyPath: offscreenOffset.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114534933452626110, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5,
+        type: 2}
+      propertyPath: offscreenOffset.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5, type: 2}
   m_IsPrefabParent: 0
@@ -13649,6 +13664,21 @@ Prefab:
       propertyPath: m_Name
       value: EnemyStationary (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114332156867965198, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: easeType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332156867965198, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: offscreenOffset.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332156867965198, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: offscreenOffset.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6ca36b48bd755d43b194ee5a36e5433, type: 2}
   m_IsPrefabParent: 0
@@ -15427,6 +15457,21 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 114332156867965198, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: easeType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332156867965198, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: offscreenOffset.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332156867965198, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: offscreenOffset.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6ca36b48bd755d43b194ee5a36e5433, type: 2}
   m_IsPrefabParent: 0
@@ -16267,6 +16312,21 @@ Prefab:
     - target: {fileID: 1584094307971454, guid: 675b7647d35d3084590e7da973cea6d2, type: 2}
       propertyPath: m_Name
       value: EnemyPatrol (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: easeType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: offscreenOffset.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: offscreenOffset.z
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 675b7647d35d3084590e7da973cea6d2, type: 2}
@@ -20719,7 +20779,7 @@ MonoBehaviour:
   faceDestination: 0
   isMoving: 0
   easeType: 16
-  easeTypePath: 21
+  easeTypePath: 1
   delay: 1
   moveSpeed: 1.5
   iTweenDelay: 0
@@ -21513,6 +21573,21 @@ Prefab:
     - target: {fileID: 4508595012084574, guid: 675b7647d35d3084590e7da973cea6d2, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: easeType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: offscreenOffset.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: offscreenOffset.z
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 675b7647d35d3084590e7da973cea6d2, type: 2}
@@ -25608,6 +25683,21 @@ Prefab:
     - target: {fileID: 1584094307971454, guid: 675b7647d35d3084590e7da973cea6d2, type: 2}
       propertyPath: m_Name
       value: EnemyPatrol (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: easeType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: offscreenOffset.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: offscreenOffset.z
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 675b7647d35d3084590e7da973cea6d2, type: 2}

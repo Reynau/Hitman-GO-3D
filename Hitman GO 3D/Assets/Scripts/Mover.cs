@@ -10,7 +10,7 @@ public class Mover : MonoBehaviour {
     public iTween.EaseType easeType;
     public iTween.EaseType easeTypePath;
 
-    public float delay = 2f;
+    public float delay = 1f;
     public float moveSpeed = 1.5f;
     public float iTweenDelay = 0f;
     public float rotateTime = 0.5f;
@@ -67,7 +67,7 @@ public class Mover : MonoBehaviour {
         }
         if (gameObject.name == "Player")
         {
-            Vector3 mid = transform.position + ((destinationPos - transform.position) / 2) + new Vector3(0f, 1f, 0f);
+            Vector3 mid = transform.position + ((destinationPos - transform.position) / 2) + new Vector3(0f, 0.6f, 0f);
             Vector3[] path = { transform.position, mid, destinationPos };
             iTween.MoveTo(gameObject, iTween.Hash(
                 "path", path,

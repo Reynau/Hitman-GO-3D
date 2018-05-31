@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDeath : MonoBehaviour {
-    public Vector3 offscreenOffset = new Vector3(0f, 10f, 0f);
+    public Vector3 offscreenOffset = new Vector3(0f, 30f, 20f);
+    public Vector3 offscreenOffsetDeath = new Vector3(0f, 10f, 0f);
 
     Board _board;
     public float deathDelay = 0f;
     public float offscreenDelay = 1f;
 
     public float iTweenDelay = 0f;
-    public iTween.EaseType easeType = iTween.EaseType.easeInOutQuint;
+    public iTween.EaseType easeType = iTween.EaseType.easeInQuint;
     public float moveTime = 0.5f;
 
 	void Awake () {
@@ -47,7 +48,7 @@ public class EnemyDeath : MonoBehaviour {
         if (_board.capturePositions.Count != 0 && _board.CurrentCapturePosition < _board.capturePositions.Count)
         {
             Vector3 capturePos = _board.capturePositions[_board.CurrentCapturePosition].position;
-            transform.position = capturePos + offscreenOffset;
+            transform.position = capturePos + offscreenOffsetDeath;
             MoveOffBoard(capturePos);
             yield return new WaitForSeconds(moveTime);
             ++_board.CurrentCapturePosition;
