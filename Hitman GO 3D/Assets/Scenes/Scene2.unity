@@ -8698,7 +8698,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e093dc946c1e906459adf8403b895fb4, type: 2}
+      objectReference: {fileID: 2100000, guid: c6c8baf5f79bb694692db4ce2493926a, type: 2}
     - target: {fileID: 23958018292043518, guid: 3971bfc58d9b84d478587deaa823a5c9,
         type: 2}
       propertyPath: m_DynamicOccludee
@@ -12940,7 +12940,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 790b39e82a30cd74eacc491b6a40586f, type: 2}
+  - {fileID: 2100000, guid: 33a0b0691aa60c747b81549dba2fc704, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
