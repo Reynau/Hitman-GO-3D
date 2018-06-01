@@ -156,6 +156,18 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator EndLevelRoutine()
     {
+        _player.totalhealthyCount = _player.totalhealthyCount + _player.healthyCount;
+        _player.totalfastFoodCount = _player.totalfastFoodCount + _player.fastFoodCount;
+        if (_player.totalhealthyCount > 3)
+        {
+            _player.totalhealthyCount = 3;
+        }
+        if (_player.totalfastFoodCount > 3)
+        {
+            _player.totalfastFoodCount = 3;
+        }
+        _player.healthyCount = 0;
+        _player.fastFoodCount = 0;
         _player.playerInput.InputEnabled = false;
         Debug.Log("END LEVEL");
 
@@ -187,6 +199,8 @@ public class GameManager : MonoBehaviour {
 
     public void RestartLevel ()
     {
+        _player.healthyCount = 0;
+        _player.fastFoodCount = 0;
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }

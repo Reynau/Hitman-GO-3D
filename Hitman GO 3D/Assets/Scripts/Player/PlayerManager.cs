@@ -17,7 +17,9 @@ public class PlayerManager : TurnManager
     
     public int healthyCount = 0;
     public int fastFoodCount = 0;
-    
+    public int totalhealthyCount = 0;
+    public int totalfastFoodCount = 0;
+
     public UnityEvent deathEvent;
 
     protected override void Awake()
