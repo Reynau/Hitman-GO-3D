@@ -17,6 +17,12 @@ public class MenuManager : MonoBehaviour {
         mainMenuEvent.Invoke();
     }
 
+    void Update()
+    {
+        if (Input.GetKey("escape"))
+            Application.Quit();
+    }
+
     public void ChangeToMainMenu ()
     {
         Debug.Log("Change to main menu");
@@ -51,5 +57,10 @@ public class MenuManager : MonoBehaviour {
     {
         Debug.Log("Loading credits");
         SceneManager.LoadScene("Credits");
+    }
+
+    public void Exit ()
+    {
+        Application.Quit();
     }
 }
