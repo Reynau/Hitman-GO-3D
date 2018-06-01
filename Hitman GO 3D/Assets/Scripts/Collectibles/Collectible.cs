@@ -14,6 +14,7 @@ public class Collectible : MonoBehaviour
     Board _board;
     Camera _cam;
 
+    public AudioSource sparkleAudio;
     public CollectibleType type;
 
     public bool isPicked = false;
@@ -51,6 +52,7 @@ public class Collectible : MonoBehaviour
     {
         if (!isPicked)
         {
+            sparkleAudio.Play();
             StartCoroutine(PickRoutine());
             isPicked = true;
         }
