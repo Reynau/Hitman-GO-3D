@@ -1739,7 +1739,7 @@ Transform:
   - {fileID: 636383340}
   - {fileID: 1312016035}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &209242268
 Prefab:
@@ -3947,7 +3947,7 @@ Transform:
   - {fileID: 582050841}
   - {fileID: 1628684867}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &487311566
 GameObject:
@@ -7591,7 +7591,7 @@ Transform:
   - {fileID: 710687198}
   - {fileID: 1881651911}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &973795519 stripped
 Transform:
@@ -8332,7 +8332,7 @@ RectTransform:
   - {fileID: 1780230433}
   - {fileID: 390734598}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8416,6 +8416,11 @@ Prefab:
       propertyPath: activateActivableEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 114242117453142276, guid: f2d48fac51de49f4a8a0a173ddd6ebad,
+        type: 2}
+      propertyPath: sniperAudio
+      value: 
+      objectReference: {fileID: 138510140}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2d48fac51de49f4a8a0a173ddd6ebad, type: 2}
   m_IsPrefabParent: 0
@@ -10185,7 +10190,7 @@ Transform:
   - {fileID: 523280733}
   - {fileID: 356682578}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1309689975
 BoxCollider:
@@ -12034,10 +12039,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   isStatic: 0
+  closeOnStart: 1
+  delay: 1
   activableNode: {fileID: 1965311059}
   targetNode: {fileID: 925536334}
-  delay: 1
-  closeOnStart: 1
+  activableAudio: {fileID: 1881651912}
 --- !u!114 &1596456996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13580,7 +13586,7 @@ Transform:
   - {fileID: 1553431591}
   - {fileID: 1279794316}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1766207998
 MonoBehaviour:
@@ -14998,7 +15004,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949210822
 GameObject:
@@ -15057,7 +15063,7 @@ Transform:
   - {fileID: 755139392}
   - {fileID: 1203873702}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1952675170
 Prefab:

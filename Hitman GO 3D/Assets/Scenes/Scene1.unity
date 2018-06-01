@@ -3127,6 +3127,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  sniperAudio: {fileID: 1560566196}
   delay: 0
 --- !u!1001 &458643926
 Prefab:
@@ -8212,10 +8213,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   isStatic: 0
+  closeOnStart: 1
+  delay: 1
   activableNode: {fileID: 1854218513}
   targetNode: {fileID: 899523344}
-  delay: 1
-  closeOnStart: 1
+  activableAudio: {fileID: 1699766248}
 --- !u!114 &1104884975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25251,7 +25253,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1720057313}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2, y: 0, z: 2}
+  m_LocalPosition: {x: -4, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 90574250}

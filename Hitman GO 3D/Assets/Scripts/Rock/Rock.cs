@@ -12,6 +12,7 @@ public enum Position
 
 public class Rock : Activable
 {
+    public AudioSource rockAudio;
     public float delay = 1.4f;
 
     Board _board;
@@ -83,7 +84,7 @@ public class Rock : Activable
         if (nodeDest != null)
         {
             EnemyManager[] enemies = Object.FindObjectsOfType<EnemyManager>() as EnemyManager[];
-            // Play rock sound
+            rockAudio.Play();
 
             foreach (EnemyManager enemy in enemies)
             {

@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Sniper : Activable
 {
+    public AudioSource sniperAudio;
     public float delay;
 
     Board _board;
@@ -36,7 +37,7 @@ public class Sniper : Activable
             EnemyMover nearestMoverDest = nearestEnemy.GetComponent<EnemyMover>();
             _player_mover.destination = nearestMoverDest.CurrentNode.transform.position;
             _player_mover.FaceDestination();
-            // Play shot sound
+            sniperAudio.Play();
             nearestEnemy.Die();
         }
     }
