@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour {
 
     public float startPlayingDelay = 1f;
     public string nextLevel;
+    public string menuName = "Menu";
 
     public UnityEvent setupEvent;
     public UnityEvent startLevelEvent;
@@ -172,6 +173,11 @@ public class GameManager : MonoBehaviour {
             // _hasLevelFinished = true
             yield return null;
         }
+    }
+
+    public void BackMenu()
+    {
+        SceneManager.LoadScene(menuName);
     }
 
     public void NextLevel ()
