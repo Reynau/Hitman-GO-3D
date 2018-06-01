@@ -3198,6 +3198,21 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: offscreenOffset.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: offscreenOffset.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657312201992974, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: moveTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 675b7647d35d3084590e7da973cea6d2, type: 2}
   m_IsPrefabParent: 0
@@ -5035,6 +5050,21 @@ Prefab:
         type: 2}
       propertyPath: easeType
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114534933452626110, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5,
+        type: 2}
+      propertyPath: offscreenOffset.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114534933452626110, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5,
+        type: 2}
+      propertyPath: offscreenOffset.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114534933452626110, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5,
+        type: 2}
+      propertyPath: moveTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5, type: 2}
@@ -9398,6 +9428,21 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4031304823757948, guid: d6ca36b48bd755d43b194ee5a36e5433, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332156867965198, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: offscreenOffset.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332156867965198, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: offscreenOffset.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332156867965198, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: moveTime
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
