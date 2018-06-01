@@ -5026,6 +5026,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114659564372582114, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5,
+        type: 2}
+      propertyPath: rotateTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114659564372582114, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5,
+        type: 2}
+      propertyPath: easeType
+      value: 17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5, type: 2}
   m_IsPrefabParent: 0
@@ -10098,7 +10108,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1309689972
 GameObject:
@@ -14115,7 +14125,7 @@ MonoBehaviour:
   mode: 1
   startXfrom: {fileID: 0}
   endXfrom: {fileID: 1299953283}
-  moveTime: 0.25
+  moveTime: 0.5
   delay: 0.25
   loopType: 2
   easeType: 15
