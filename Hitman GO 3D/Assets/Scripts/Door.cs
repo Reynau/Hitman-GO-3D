@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour {
+    public AudioSource doorAudio;
     public bool initiallyOpen = true;
 
     public GameObject pivot;
@@ -14,6 +16,9 @@ public class Door : MonoBehaviour {
     bool _open;
     Vector3 openRotation = new Vector3(0f, 90f, 0f);
     Vector3 closeRotation = new Vector3(0f, 0f, 0f);
+
+    float _hzToSecond = 34100f;
+    public float soundDelay = 1f;
 
     private void Start()
     {
@@ -33,7 +38,6 @@ public class Door : MonoBehaviour {
 
         if (!_open)
         {
-            Debug.Log("opening");
             iTween.RotateTo(pivot, iTween.Hash(
                 "rotation", openRotation,
                 "time", animationTime,
@@ -45,8 +49,6 @@ public class Door : MonoBehaviour {
         }
         else
         {
-            Debug.Log("closing");
-            Debug.Log(closeRotation);
             iTween.RotateTo(pivot, iTween.Hash(
                 "rotation", closeRotation,
                 "time", animationTime,
@@ -56,6 +58,7 @@ public class Door : MonoBehaviour {
             ));
             _open = false;
         }
-        
+        ulong delay = Convert.ToUInt64(soundDelay * _hzToSecond);
+        doorAudio.Play(delay);
     }
 }

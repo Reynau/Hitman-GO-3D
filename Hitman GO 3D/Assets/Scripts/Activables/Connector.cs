@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Connector : Activable {
-    bool _connectableNodes;
-
+public class Connector : Activable
+{
     public bool isStatic = false;
-    private bool _alreadyActivated = false;
-    
-    public Node activableNode;
-    public Node targetNode;
+    public bool closeOnStart = true;
 
     public float delay;
 
-    public bool closeOnStart = true;
+    public Node activableNode;
+    public Node targetNode;
+
+    public AudioSource activableAudio;
+
+    bool _alreadyActivated = false;
+    bool _connectableNodes;
 
     private void Awake ()
     {
@@ -66,6 +68,7 @@ public class Connector : Activable {
                 {
                     Disconnect();
                 }
+                activableAudio.Play();
             }
             else
             {
