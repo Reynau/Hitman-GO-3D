@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMover : Mover {
-    PlayerCompass _playerCompass;
+    public PlayerCompass playerCompass;
 
     protected override void Awake()
     {
         base.Awake(); // Call parent Awake method
-        _playerCompass = Object.FindObjectOfType<PlayerCompass>().GetComponent<PlayerCompass>();
+        playerCompass = Object.FindObjectOfType<PlayerCompass>().GetComponent<PlayerCompass>();
     }
 
     protected override void Start()
@@ -19,9 +19,9 @@ public class PlayerMover : Mover {
 
     protected override IEnumerator MoveRoutine(Vector3 destinationPos, float delayTime)
     {
-        if (_playerCompass != null)
+        if (playerCompass != null)
         {
-            _playerCompass.ShowArrows(false);
+            playerCompass.ShowArrows(false);
         }
 
         faceDestination = true;
@@ -29,13 +29,7 @@ public class PlayerMover : Mover {
 
         UpdateBoard();        
 
-        finishMovementEvent.Invoke();
-
-        yield return new WaitForSeconds(1.7f);
-        if (_playerCompass != null)
-        {
-            _playerCompass.ShowArrows(true);
-        }
+        finishMovementEvent.Invoke();        
     }
 
     void UpdateBoard ()

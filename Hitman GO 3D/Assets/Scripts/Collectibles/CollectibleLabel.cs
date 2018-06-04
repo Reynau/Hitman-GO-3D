@@ -24,15 +24,15 @@ public class CollectibleLabel : MonoBehaviour
             switch (collectibleType)
             {
                 case CollectibleType.FastFood:
-                    _textLabel.text = "Total Fast Food: " + _player.totalfastFoodCount.ToString() + "/3";
-                    if (_player.totalhealthyCount >= 3)
+                    _textLabel.text = "Total Fast Food: " + PlayerManager.totalfastFoodCount.ToString() + "/3";
+                    if (PlayerManager.totalfastFoodCount >= 3)
                     {
                         _textLabel.text = _textLabel.text + "\n" + "Some snacks after" + "\n" + "great assassinations";
                     }
                     break;
                 case CollectibleType.HealthyFood:
-                    _textLabel.text = "Total Healthy Food: " + _player.totalhealthyCount.ToString() + "/3";
-                    if (_player.totalhealthyCount >= 3)
+                    _textLabel.text = "Total Healthy Food: " + PlayerManager.totalhealthyCount.ToString() + "/3";
+                    if (PlayerManager.totalhealthyCount >= 3)
                     {
                         _textLabel.text = _textLabel.text + "\n" + "A healthy assassin needs" + "\n" + "healthy food";
                     }

@@ -15,6 +15,10 @@ public enum Turn
 public class GameManager : MonoBehaviour {
     Board _board;
     PlayerManager _player;
+    public bool HasMoved
+    {
+        set { _player.playerMover.hasMoved = value; }
+    }
 
     List<EnemyManager> _enemies;
 
@@ -156,15 +160,15 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator EndLevelRoutine()
     {
-        _player.totalhealthyCount = _player.totalhealthyCount + _player.healthyCount;
-        _player.totalfastFoodCount = _player.totalfastFoodCount + _player.fastFoodCount;
-        if (_player.totalhealthyCount > 3)
+        PlayerManager.totalhealthyCount = PlayerManager.totalhealthyCount + _player.healthyCount;
+        PlayerManager.totalfastFoodCount = PlayerManager.totalfastFoodCount + _player.fastFoodCount;
+        if (PlayerManager.totalhealthyCount > 3)
         {
-            _player.totalhealthyCount = 3;
+            PlayerManager.totalhealthyCount = 3;
         }
-        if (_player.totalfastFoodCount > 3)
+        if (PlayerManager.totalfastFoodCount > 3)
         {
-            _player.totalfastFoodCount = 3;
+            PlayerManager.totalfastFoodCount = 3;
         }
         _player.healthyCount = 0;
         _player.fastFoodCount = 0;
@@ -224,6 +228,10 @@ public class GameManager : MonoBehaviour {
         _currentTurn = Turn.Player;
         _player.IsTurnComplete = false;
 
+        if (_player.playerMover.playerCompass != null)
+        {
+            _player.playerMover.playerCompass.ShowArrows(true);
+        }
         // alow Player to move
     }
 
@@ -276,6 +284,10 @@ public class GameManager : MonoBehaviour {
             if (_player.IsTurnComplete && !AreEnemiesAllDead())
             {
                 PlayEnemyTurn();
+            }
+            else if (AreEnemiesAllDead() && _player.playerMover.playerCompass != null)
+            {
+                _player.playerMover.playerCompass.ShowArrows(true);
             }
         }
         else if (_currentTurn == Turn.Enemy)

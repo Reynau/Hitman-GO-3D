@@ -7,6 +7,7 @@ public class Mover : MonoBehaviour {
     public Vector3 destination;
     public bool faceDestination = false;
     public bool isMoving = false;
+    public bool hasMoved = false;
     public iTween.EaseType easeType;
     public iTween.EaseType easeTypePath;
 
@@ -80,6 +81,7 @@ public class Mover : MonoBehaviour {
         iTween.Stop(gameObject);
         transform.position = destinationPos;
         isMoving = false;
+        hasMoved = true;
 
         UpdateCurrentNode();
     }

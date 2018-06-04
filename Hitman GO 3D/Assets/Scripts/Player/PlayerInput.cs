@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour {
     bool _inputEnabled = false;
     public bool InputEnabled { get { return _inputEnabled; } set { _inputEnabled = value; } }
 
-	public void GetKeyInput ()
+        public void GetKeyInput ()
     {
         if (_inputEnabled)
         {

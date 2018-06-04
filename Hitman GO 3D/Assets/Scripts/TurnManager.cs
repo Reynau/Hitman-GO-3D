@@ -15,6 +15,7 @@ public class TurnManager : MonoBehaviour {
     public virtual void FinishTurn()
     {
         _isTurnComplete = true;
+        _gameManager.HasMoved = false;
 
         if (_gameManager != null)
         {

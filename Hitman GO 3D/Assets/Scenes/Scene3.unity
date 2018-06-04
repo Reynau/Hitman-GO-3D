@@ -2047,7 +2047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 149.99997, y: -353}
+  m_AnchoredPosition: {x: 200, y: -353}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &184773973
@@ -2357,7 +2357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -150, y: 100}
+  m_AnchoredPosition: {x: -200, y: 100}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212243399
@@ -10034,6 +10034,11 @@ Prefab:
       propertyPath: easeType
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 114659564372582114, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5,
+        type: 2}
+      propertyPath: easeTypePath
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 368e99a32dfcb2f4a9dd61b9cb5571f5, type: 2}
   m_IsPrefabParent: 0
@@ -11590,7 +11595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -150, y: -353}
+  m_AnchoredPosition: {x: -200, y: -353}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &953362927
@@ -14790,6 +14795,11 @@ Prefab:
       propertyPath: offscreenOffset.z
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114206831686357018, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: easeTypePath
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6ca36b48bd755d43b194ee5a36e5433, type: 2}
   m_IsPrefabParent: 0
@@ -15147,7 +15157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 149.99997, y: 100}
+  m_AnchoredPosition: {x: 200, y: 100}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1180902511
@@ -16934,6 +16944,11 @@ Prefab:
       propertyPath: offscreenOffset.z
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114206831686357018, guid: d6ca36b48bd755d43b194ee5a36e5433,
+        type: 2}
+      propertyPath: easeTypePath
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6ca36b48bd755d43b194ee5a36e5433, type: 2}
   m_IsPrefabParent: 0
@@ -17790,6 +17805,11 @@ Prefab:
         type: 2}
       propertyPath: offscreenOffset.z
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114011139969608032, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: easeTypePath
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 675b7647d35d3084590e7da973cea6d2, type: 2}
@@ -22339,6 +22359,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1180902511}
+        m_MethodName: Move
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   loseLevelEvent:
@@ -22358,6 +22389,17 @@ MonoBehaviour:
       - m_Target: {fileID: 329382796}
         m_MethodName: FadeOn
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1730816768}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23629,6 +23671,11 @@ Prefab:
         type: 2}
       propertyPath: offscreenOffset.z
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114011139969608032, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: easeTypePath
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 675b7647d35d3084590e7da973cea6d2, type: 2}
@@ -27743,6 +27790,11 @@ Prefab:
         type: 2}
       propertyPath: offscreenOffset.z
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114011139969608032, guid: 675b7647d35d3084590e7da973cea6d2,
+        type: 2}
+      propertyPath: easeTypePath
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 675b7647d35d3084590e7da973cea6d2, type: 2}

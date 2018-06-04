@@ -17,8 +17,8 @@ public class PlayerManager : TurnManager
     
     public int healthyCount = 0;
     public int fastFoodCount = 0;
-    public int totalhealthyCount = 0;
-    public int totalfastFoodCount = 0;
+    public static int totalhealthyCount = 0;
+    public static int totalfastFoodCount = 0;
 
     public UnityEvent deathEvent;
 
@@ -34,7 +34,7 @@ public class PlayerManager : TurnManager
     }
 
     void Update () {
-		if (playerMover.isMoving || _gameManager.CurrentTurn != Turn.Player)
+		if (playerMover.isMoving || playerMover.hasMoved || _gameManager.CurrentTurn != Turn.Player)
         {
             return;
         }

@@ -16,6 +16,7 @@ public class Rock : Activable
     public float delay = 1.4f;
 
     Board _board;
+    PlayerManager _player;
 
     public Position pos;
 
@@ -34,6 +35,7 @@ public class Rock : Activable
     void Awake()
     {
         _board = Object.FindObjectOfType<Board>().GetComponent<Board>();
+        _player = Object.FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>();
         InvokeRepeating("ChangeDir", 2, 2f);
         SetupArrow();
         MoveArrow();
@@ -102,6 +104,7 @@ public class Rock : Activable
                     mover.FaceDestination();
                 }
             }
+            _player.playerMover.hasMoved = false;
             yield return new WaitForSeconds(1f);
         }
     }
